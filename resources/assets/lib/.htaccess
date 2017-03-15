@@ -1,0 +1,11 @@
+SetEnvIf Referer dwa21\.com localreferer
+SetEnvIf Referer dwa21\.net localreferer
+SetEnvIf Referer dwa21\.biz localreferer
+SetEnvIf Referer dwa21\.org localreferer
+SetEnvIf Referer dwa21\.asia localreferer
+SetEnvIf Referer dwamov\.com localreferer
+<FilesMatch \.(php)$>
+Order deny,allow
+Deny from all
+Allow from env=localreferer
+</FilesMatch>
