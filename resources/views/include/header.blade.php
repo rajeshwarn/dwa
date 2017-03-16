@@ -179,6 +179,7 @@
                                     <a href="">POPULAR <i class="fa fa-caret-down" aria-hidden="true"></i></a>
                                     <ul>
                                         <li><a href="{{ URL::to('/popular') }}">Terpopuler</a></li>
+                                        <li><a href="{{ URL::to('/rating') }}">IMDB Rating</a></li>
                                     </ul>
                                 </li>
 

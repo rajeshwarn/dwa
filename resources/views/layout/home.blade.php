@@ -22,9 +22,58 @@
 												<h2 class="movie-title" itemprop="name">{{ $movie->title }}</h2>
 											</div>
 
+											<?php 
+												if( trim($movie->trailer_link) != '' )
+													{
+														if( strpos($movie->trailer_link, 'embed') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('/', $y_link);
+																if( count($y_link_arr) < 4 )
+																	{
+																		$y_link_final = '';
+																	}
+																else
+																	{
+																		if( isset($y_link_arr[4]) )
+																			{
+																				$y_link_final = $y_link_arr[4];
+																			}
+																		else
+																			{
+																				$y_link_final = '';
+																			}
+																	}
+															}
+														else if( strpos($movie->trailer_link, 'watch') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('=', $y_link);
+
+																if( isset($y_link_arr[1]) )
+																	{
+																		$y_link_final = $y_link_arr[1];
+																	}
+																else
+																	{
+																		$y_link_final = '';
+																	}
+															}
+														else
+															{
+																$y_link_final = '';
+															}
+													}				
+												else
+													{
+														$y_link_final = '';
+													}						
+											?>
+
 											<div class="menu-list-wrap">
 												<ul>
 													<li><meta itemprop="director" content="{{ $movie->director }}" /> <a href="film/{{ $movie->slug_id }}"><i class="fa fa-play" aria-hidden="true" itemprop="url"></i><meta itemprop="url" content="http://dewabioskop21.com/film/{{ $movie->slug_id }}" /> <span>Watch</span></a></li>
+													<li><a data-link="{{ $y_link_final or '' }}" class="btn-trailer" rel="nofollow" itemprop="trailer"><i class="fa fa-film" aria-hidden="true"></i> <span>Trailer</span></a></li>
 												</ul>
 											</div>
 
@@ -37,7 +86,12 @@
 												<span class="btn-menu"><img src="{{ URL::asset('resources/assets/img/item-menu-icon.png') }}" width="22px" height="12px"></span>
 											</div>
 										</div>
-									
+
+										<div class="movie-details">
+											<span class="movie-year">{{ $movie->year }}</span>
+											<span class="movie-rating"><img src="{{ URL::asset('resources/assets/img/imdb-icon.png') }}" class="imdb-icon" width="31px" height="15px"> {{ $movie->rating }} / 10</span>
+										</div>
+										
 									</div>
 								@endforeach
 							@else
@@ -61,10 +115,58 @@
 												<h2 class="movie-title" itemprop="name">{{ $movie->title }}</h2>
 											</div>
 
+											<?php 
+												if( trim($movie->trailer_link) != '' )
+													{
+														if( strpos($movie->trailer_link, 'embed') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('/', $y_link);
+																if( count($y_link_arr) < 4 )
+																	{
+																		$y_link_final = '';
+																	}
+																else
+																	{
+																		if( isset($y_link_arr[4]) )
+																			{
+																				$y_link_final = $y_link_arr[4];
+																			}
+																		else
+																			{
+																				$y_link_final = '';
+																			}
+																	}
+															}
+														else if( strpos($movie->trailer_link, 'watch') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('=', $y_link);
+
+																if( isset($y_link_arr[1]) )
+																	{
+																		$y_link_final = $y_link_arr[1];
+																	}
+																else
+																	{
+																		$y_link_final = '';
+																	}
+															}
+														else
+															{
+																$y_link_final = '';
+															}
+													}				
+												else
+													{
+														$y_link_final = '';
+													}						
+											?>
 
 											<div class="menu-list-wrap">
 												<ul>
 													<li><a href="film/{{ $movie->slug_id }}" itemprop="url"><i class="fa fa-play" aria-hidden="true"></i> <span>Watch</span></a></li>
+													<li><a data-link="{{ $y_link_final or '' }}" class="btn-trailer" rel="nofollow" itemprop="trailer"><i class="fa fa-film" aria-hidden="true"></i> <span>Trailer</span></a></li>
 												</ul>
 											</div>
 
@@ -76,6 +178,11 @@
 
 												<span class="btn-menu"><img src="{{ URL::asset('resources/assets/img/item-menu-icon.png') }}" width="22px" height="12px"></span>
 											</div>
+										</div>
+
+										<div class="movie-details">
+											<span class="movie-year">{{ $movie->year }}</span>
+											<span class="movie-rating" ><img src="{{ URL::asset('resources/assets/img/imdb-icon.png') }}" class="imdb-icon" width="31px" height="15px"> {{ $movie->rating }} / 10</span>
 										</div>
 										
 									</div>
@@ -99,9 +206,58 @@
 												<h2 class="movie-title" itemprop="name">{{ $movie->title }}</h2>
 											</div>
 
+											<?php 
+												if( trim($movie->trailer_link) != '' )
+													{
+														if( strpos($movie->trailer_link, 'embed') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('/', $y_link);
+																if( count($y_link_arr) < 4 )
+																	{
+																		$y_link_final = '';
+																	}
+																else
+																	{
+																		if( isset($y_link_arr[4]) )
+																			{
+																				$y_link_final = $y_link_arr[4];
+																			}
+																		else
+																			{
+																				$y_link_final = '';
+																			}
+																	}
+															}
+														else if( strpos($movie->trailer_link, 'watch') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('=', $y_link);
+
+																if( isset($y_link_arr[1]) )
+																	{
+																		$y_link_final = $y_link_arr[1];
+																	}
+																else
+																	{
+																		$y_link_final = '';
+																	}
+															}
+														else
+															{
+																$y_link_final = '';
+															}
+													}				
+												else
+													{
+														$y_link_final = '';
+													}						
+											?>
+
 											<div class="menu-list-wrap">
 												<ul>
 													<li><a href="film/{{ $movie->slug_id }}" itemprop="url"><i class="fa fa-play" aria-hidden="true"></i> <span>Watch</span></a></li>
+													<li><a data-link="{{ $y_link_final or ''  }}" class="btn-trailer" rel="nofollow" itemprop="trailer"><i class="fa fa-film" aria-hidden="true"></i> <span>Trailer</span></a></li>
 												</ul>
 											</div>
 
@@ -114,7 +270,11 @@
 												<span class="btn-menu"><img src="{{ URL::asset('resources/assets/img/item-menu-icon.png') }}" width="22px" height="12px"></span>
 											</div>
 										</div>
-										
+
+										<div class="movie-details">
+											<span class="movie-year">{{ $movie->year }}</span>
+											<span class="movie-rating" ><img src="{{ URL::asset('resources/assets/img/imdb-icon.png') }}" class="imdb-icon" width="31px" height="15px"> {{ $movie->rating }} / 10</span>
+										</div>
 									</div>
 									<?php $index++; ?>
 								@endforeach
@@ -263,6 +423,53 @@
 											<div class="right">
 												<div class="duration-wrap">
 													
+													<?php 
+												if( trim($movie->trailer_link) != '' )
+													{
+														if( strpos($movie->trailer_link, 'embed') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('/', $y_link);
+																if( count($y_link_arr) < 4 )
+																	{
+																		$y_link_final = '';
+																	}
+																else
+																	{
+																		if( isset($y_link_arr[4]) )
+																			{
+																				$y_link_final = $y_link_arr[4];
+																			}
+																		else
+																			{
+																				$y_link_final = '';
+																			}
+																	}
+															}
+														else if( strpos($movie->trailer_link, 'watch') !== false )
+															{
+																$y_link = $movie->trailer_link;
+																$y_link_arr = explode('=', $y_link);
+
+																if( isset($y_link_arr[1]) )
+																	{
+																		$y_link_final = $y_link_arr[1];
+																	}
+																else
+																	{
+																		$y_link_final = '';
+																	}
+															}
+														else
+															{
+																$y_link_final = '';
+															}
+													}				
+												else
+													{
+														$y_link_final = '';
+													}						
+											?>
 
 													<span class="movie-duration" itemprop="duration">Duration <br>
 														@if( $movie -> duration == '' )
@@ -273,7 +480,8 @@
 													</span>
 													<span class="movie-rating" >Rating <br>{{ $movie->rating }}</span>
 													<span class="movie-year">Year <br>{{ $movie->year }}</span>
-													<a href="{{ URL::to('/film/' . $movie->slug_id) }}" class="btn-watch" itemprop="url">Watch</a>					
+													<a href="{{ URL::to('/film/' . $movie->slug_id) }}" class="btn-watch" itemprop="url">Watch</a>								
+													<a data-link="{{ $y_link_final or ''  }}" class="btn-trailer" rel="nofollow" itemprop="trailer">Trailer</a>
 												</div>
 											</div>
 										</div>
@@ -310,6 +518,56 @@
 																@endif
 															<?php } ?>
 													@endforeach
+
+													<?php 
+														if( trim($movie->trailer_link) != '' )
+															{
+																if( strpos($movie->trailer_link, 'embed') !== false )
+																	{
+																		$y_link = $movie->trailer_link;
+																		$y_link_arr = explode('/', $y_link);
+																		if( count($y_link_arr) < 4 )
+																			{
+																				$y_link_final = '';
+																			}
+																		else
+																			{
+																				if( isset($y_link_arr[4]) )
+																					{
+																						$y_link_final = $y_link_arr[4];
+																					}
+																				else
+																					{
+																						$y_link_final = '';
+																					}
+																			}
+																	}
+																else if( strpos($movie->trailer_link, 'watch') !== false )
+																	{
+																		$y_link = $movie->trailer_link;
+																		$y_link_arr = explode('=', $y_link);
+
+																		if( isset($y_link_arr[1]) )
+																			{
+																				$y_link_final = $y_link_arr[1];
+																			}
+																		else
+																			{
+																				$y_link_final = '';
+																			}
+																	}
+																else
+																	{
+																		$y_link_final = '';
+																	}
+															}				
+														else
+															{
+																$y_link_final = '';
+															}						
+													?>
+
+													<a data-link="{{ $y_link_final or ''  }}" class="btn-trailer" rel="nofollow" itemprop="trailer">Trailer</a>
 												</div>
 											</div>
 										</div>
