@@ -11,6 +11,7 @@ use App\User;
 use App\Movie;
 use App\Options;
 use App\RequestMov;
+use App\Client;
 use Hash;
 use Redirect;
 use Validator;
@@ -95,7 +96,6 @@ class Admincontroller extends Controller
               return view('layout/admin/movie') -> with(['movie' => $movie, 'total_item' => $total_item, 'title' => $title]);
             }
         }
-
     }
 
     public function bestmovie() {
@@ -106,7 +106,6 @@ class Admincontroller extends Controller
       $best_movie = Movie::where('category','LIKE','%Best Movie%') -> get();
 
       return view('layout/admin/bestmovie') -> with(['title' => $title, 'movie' => $movie, 'bestmovie' => $best_movie]);
-
     }
 
     public function comingsoon() {
@@ -223,7 +222,6 @@ class Admincontroller extends Controller
       $msg = "<div class='alert alert-success'>User created <span class='btn-close-alert'><i class='fa fa-times' aria-hidden='true'></i></span></div>";
 
     	return Redirect::to('/dev-admin/edit-user/' . $user->id) -> with('msg', $msg);
-
     }
 
     public function updateuser(Request $req, $id) {
@@ -250,7 +248,6 @@ class Admincontroller extends Controller
       $msg = "<div class='alert alert-success'>User data updated <span class='btn-close-alert'><i class='fa fa-times' aria-hidden='true'></i></span></div>";
 
       return Redirect::to('/dev-admin/edit-user/' . $user->id) -> with('msg', $msg);
-
     }
 
     public function storenewmovie(Request $req) { 
@@ -764,7 +761,6 @@ class Admincontroller extends Controller
       $data = [ 'cat' => $new_cat ];
 
       return response() -> json($data);
-
     }
 
     public function bulkmovie(Request $req) {
@@ -967,7 +963,6 @@ class Admincontroller extends Controller
     	return redirect("dev-admin/import") -> with("msg","<div class='alert alert-success'>Success import.</div>");
     }
 
-
     public function destroy($id) {
       Movie::destroy($id);
 
@@ -1048,4 +1043,12 @@ class Admincontroller extends Controller
       curl_close($ch);
       return $page;
     }
+
+    // untuk menu client sycn
+    public function clientsync(){
+      $data['title'] = "Client SYNC";
+
+      $data['client'] = Client::all();
+      return view('layout/admin/clientsync') -> with($data);
+    } 
 }
