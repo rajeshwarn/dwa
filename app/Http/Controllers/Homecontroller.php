@@ -12,9 +12,7 @@ use App\Category;
 use App\Options;
 use App\RequestMov;
 
-class Homecontroller extends Controller
-{
-    //
+class Homecontroller extends Controller{
 
     public function index() {
         $title = 'Nonton Film Movie Online di Dewabioskop21.com';
@@ -514,7 +512,7 @@ class Homecontroller extends Controller
         return view('layout/movie') -> with($data);
     }
 
-     public function yearmovie($year) {
+    public function yearmovie($year) {
 
         if( $this -> checkip() == false )
             {
