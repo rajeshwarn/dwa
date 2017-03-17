@@ -67,4 +67,6 @@ Route::post('/dev-admin/post-edit-movie/{id}','Admincontroller@updatemovie') -> 
 Route::post('/dev-admin/post-edit-social-profiles','Admincontroller@updatesocial') -> middleware('is_admin_login');
 Route::post('/dev-admin/import','Admincontroller@storeImportMovieData') -> middleware('is_admin_login');
 
-Route::get('/dev-admin/client-sync','Admincontroller@clientsync');
+Route::get('/dev-admin/client-sync','Admincontroller@clientsync')-> middleware('is_admin_login');
+Route::get('/dev-admin/new-client','Admincontroller@newclient')-> middleware('is_admin_login');
+Route::post('/dev-admin/post-new-client','Admincontroller@storenewclient')-> middleware('is_admin_login');

@@ -23,6 +23,9 @@
 										<li class="selected"><a href="new-user">Add User</a></li>
 									</ul>
 								</li>
+								<li>
+									<a href="client-sync"><i class="fa fa-users" aria-hidden="true"></i> Client Sync</a>
+								</li>
 								<li><a href="social-profiles"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
 								@endif
 							</ul>

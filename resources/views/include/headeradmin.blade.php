@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="{{ URL::asset('resources/assets/css/font-awesome.css') }}">
 		
-		<link rel="stylesheet" href="{{ URL::asset('resources/assets/css/style.css?ver=2.0.2') }}">
+		<link rel="stylesheet" href="{{ URL::asset('resources/assets/css/style.css?ver=1.0.1') }}">
 	</head>
 	<body>
 

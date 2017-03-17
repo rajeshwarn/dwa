@@ -18,6 +18,9 @@
 
 								@if( session('role') == 'super-administrator' )
 								<li class="selected"><a href="user"><i class="fa fa-user" aria-hidden="true"></i> Users</a></li>
+								<li>
+									<a href="client-sync"><i class="fa fa-users" aria-hidden="true"></i> Client Sync</a>
+								</li>
 								<li><a href=""><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
 								@endif
 							</ul>

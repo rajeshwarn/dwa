@@ -978,7 +978,6 @@ class Admincontroller extends Controller
       $msg = "<div class='alert alert-success'>1 User Deleted <span class='btn-close-alert'><i class='fa fa-times' aria-hidden='true'></i></span></div>";
 
       return Redirect::to('/dev-admin/user') -> with('msg', $msg); 
-
     }
 
     public function destroybestmovie($id) {
@@ -1046,9 +1045,23 @@ class Admincontroller extends Controller
 
     // untuk menu client sycn
     public function clientsync(){
-      $data['title'] = "Client SYNC";
+      $data['title'] = "Dashboard Admin - Client SYNC";
 
       $data['client'] = Client::all();
       return view('layout/admin/clientsync') -> with($data);
     } 
+
+    public function newclient() {
+
+      $title  = "Dashboard Admin - Client SYNC";
+
+      return view('layout/admin/newclient') -> with('title', $title);
+    }
+
+    public function storenewclient() {
+        print_r($_POST);
+      // $title  = "Dashboard Admin - Client SYNC";
+
+      // return view('layout/admin/newclient') -> with('title', $title);
+    }
 }

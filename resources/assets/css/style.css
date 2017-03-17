@@ -1880,6 +1880,8 @@ header .bottom .top-category-wrap ul li a {
 #edit-movie-form,
 #new-user-form,
 #edit-user-form,
+#new-client-form,
+#edit-client-form,
 #edit-social-profile-form {
 	display: block;
 	padding: 10px 0 5px;
@@ -1894,12 +1896,16 @@ header .bottom .top-category-wrap ul li a {
 }
 
 #new-movie-form .category-list,
-#edit-movie-form .category-list {
+#edit-movie-form .category-list,
+#new-client-form .category-list,
+#edit-client-form .category-list {
 	padding-left: 0;
 }
 
-#new-movie-form .category-list li,
-#edit-movie-form .category-list li {
+#new-client-form .category-list li,
+#edit-client-form .category-list li,
+#new-client-form .category-list li,
+#edit-client-form .category-list li {
 	display: inline-block;
 	width: 15%;
 	margin: 5px;
@@ -1909,19 +1915,23 @@ header .bottom .top-category-wrap ul li a {
 }
 
 #new-movie-form .category-list li input,
-#edit-movie-form .category-list li input {
+#edit-movie-form .category-list li input,
+#new-client-form .category-list li input,
+#edit-client-form .category-list li input {
 	margin-right: 5px;
 	vertical-align: top;
 }
 
 #new-movie-form .category-list li.cat-coming-soon,
-#edit-movie-form .category-list li.cat-coming-soon {
+#edit-movie-form .category-list li.cat-coming-soon,
+#new-client-form .category-list li.cat-coming-soon,
+#edit-client-form .category-list li.cat-coming-soon {
 	font-weight: bold;
 	color: red;
 }
 
 #new-movie-form  input[name=movie-check-featured],
-#edit-movie-form  input[name=movie-check-featured] {	
+#edit-movie-form  input[name=movie-check-featured]{	
 	display: none;
 	width: 20px;
 	height: 20px;
@@ -1986,7 +1996,9 @@ header .bottom .top-category-wrap ul li a {
 }
 
 #new-movie-form p.example,
-#edit-movie-form p.example {
+#edit-movie-form p.example,
+#new-client-form p.example,
+#edit-client-form p.example {
 	margin-top: 2px;
 	font-size: 13px;
 	color: #b0b1b1;
